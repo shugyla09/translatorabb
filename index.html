@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қысқармаларды Аудару</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 50px; }
+        input[type="text"] { width: 300px; }
+        button { margin-top: 10px; }
+        h3 { font-size: 24 px}
+    </style>
+</head>
+<body>
+    <h1>Ағылшын қысқармаларын қазақшаға аудару</h1>
+    <input type="text" id="abbreviation" placeholder="Қысқарманы енгізіңіз">
+    <button id="translateButton">Аудару</button>
+    <h2>Нәтиже:</h2>
+    <h3><span id="result"></span></h3>
+
+    <script>
+        // Функцияның анықтамасы
+        function translate() {
+            const abbreviations = {
+                "КРИНЖ": "cringe (испанский стыд)",
+                "ИЗИ": "easy",
+                "ЗАДОНАТИТЬ": "to donate",
+                "БФ": "best friend",
+                "РОФЛ": "Rolling On The Floor Laughing (насмешка)",
+                "ТРЕШ": "trash (про что-то очень плохое)",
+                "ТОКСИК": "toxic (токсичный человек)",
+                "ХЕЙТИТЬ": "to hate",
+                "ФЛЕКСИТЬ": "to flex (выпендриваться)",
+                "ЮЗАТЬ": "to use",
+                "ЧЕКАТЬ": "to check",
+                "ЧИЛИТЬ": "chill (расслабленный отдых)",
+                "БАЙТИТЬ": "to bite (в точности копировать что-то чужое)",
+                "КИКНУТЬ": "to kick (исключить откуда-то)",
+                "ПРУФ": "proof",
+                "ИМБА": "imbalance (выдающийся по характеристикам)"
+            };
+
+            const input = document.getElementById("abbreviation").value.toUpperCase(); // Пайдаланушы енгізген қысқарманы алу
+            const result = abbreviations[input] || "Аударма табылмады"; // Аударма нәтижесін алу
+            document.getElementById("result").textContent = result;
+        }
+
+        // Кнопкаға функцияны байланыстыру
+        document.getElementById("translateButton").onclick = translate;
+    </script>
+</body>
+</html>
